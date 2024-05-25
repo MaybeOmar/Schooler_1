@@ -46,6 +46,7 @@ public class Registeration extends AppCompatActivity {
     boolean fact;
     FirebaseAuth fAuth;
     FirebaseFirestore fstore;
+    DatabaseReference realtimeDBRef;
     private String FCM_Token;
     private static final String TAG = "Registeration";
 
@@ -71,6 +72,7 @@ public class Registeration extends AppCompatActivity {
         isAdminbox=findViewById(R.id.IsAdmin);
         isParentbox=findViewById(R.id.Isparent);
         isStudentbox=findViewById(R.id.isStudent);
+        realtimeDBRef = FirebaseDatabase.getInstance().getReference().child("Schooler").child("Users").child("Student");
 
 
         goToLogin.setOnClickListener(new View.OnClickListener() {
@@ -177,6 +179,10 @@ public class Registeration extends AppCompatActivity {
                                             userInfo.put("isStudent", "1");
                                             userInfo.put("Parent's ID:", parentID.getText().toString());
                                         }
+
+                                        DatabaseReference dbRef = realtimeDBRef.child(uID.getText().toString());
+                                        dbRef.setValue(userInfo);
+
                                         Toast.makeText(Registeration.this, "Account created", Toast.LENGTH_SHORT).show();
                                         df.set(userInfo);
                                     }
@@ -463,4 +469,4 @@ public class Registeration extends AppCompatActivity {
         public interface OnResultListener<T> {
             void onResult(T result);
         }*/
-    }
+}

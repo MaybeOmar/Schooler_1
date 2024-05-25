@@ -146,17 +146,17 @@
             app:srcCompat="@drawable/profile" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+
     <EditText
         android:id="@+id/studentName"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="28dp"
         android:hint="Student Name"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="50dp"
         android:inputType="text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
-
 
     <EditText
         android:id="@+id/studentID"

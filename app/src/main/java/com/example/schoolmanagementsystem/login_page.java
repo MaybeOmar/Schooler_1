@@ -1,6 +1,5 @@
 package com.example.schoolmanagementsystem;
 
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,15 +11,22 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.schoolmanagementsystem.Models.Student;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class login_page extends AppCompatActivity {
 
@@ -29,7 +35,9 @@ public class login_page extends AppCompatActivity {
     boolean valid=true;
     FirebaseAuth fAuth;
     FirebaseFirestore fstore;
+    DatabaseReference studentRef, studentsRef;
     Intent intent;
+    private List<Student> studentList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +52,7 @@ public class login_page extends AppCompatActivity {
 
         email = findViewById(R.id.id_et_username);
         password = findViewById(R.id.id_et_password);
-
+        studentsRef = FirebaseDatabase.getInstance().getReference().child("Schooler").child("Users").child("Student");
 
         //Add button
         signup=findViewById(R.id.Signup);
@@ -69,6 +77,38 @@ public class login_page extends AppCompatActivity {
                             Toast.makeText(login_page.this,"Login successfully",Toast.LENGTH_SHORT).show();
                             checkUserAccessLevel(authResult.getUser().getUid());
 
+                            /*studentsRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                                    studentList.clear();
+                                    for(DataSnapshot ds1:snapshot.getChildren()){
+                                        Student student = ds1.getValue(Student.class);
+
+                                            studentList.add(student);
+                                            *//*studentRef = studentsRef.child(student.getId());*//*
+
+                                                new SaveUser().Student_saveData(getApplicationContext(),true);
+                                                Toast.makeText(login_page.this,"" + student.getId(),Toast.LENGTH_SHORT).show();
+
+                                                *//*Intent intent=new Intent(login_page.this,student_home_page.class);
+                                                startActivity(intent);
+                                                finish();*//*
+
+
+                                        }
+                                    }
+
+
+
+
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError error) {
+
+                                }
+                            });*/
+
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
@@ -78,7 +118,6 @@ public class login_page extends AppCompatActivity {
                         }
                     });
                 }
-
             }
         });
         signup.setOnClickListener(new View.OnClickListener() {
@@ -107,7 +146,7 @@ public class login_page extends AppCompatActivity {
                     finish();
                 } else if (documentSnapshot.getString("isStudent") != null) {
                     startActivity(new Intent(getApplicationContext(), student_home_page.class));
-
+                    new SaveUser().Student_saveData(getApplicationContext(),true);
                     finish();
                 } else if (documentSnapshot.getString("isTeacher") != null) {
                     startActivity(new Intent(getApplicationContext(), teacher_home_page.class));

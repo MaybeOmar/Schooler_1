@@ -39,7 +39,7 @@ public class admin_home_page extends AppCompatActivity {
 
         modelList = new ArrayList<>();
         modelList.add(new Model(R.drawable.addaccount, AddActivity.class,"Add"));
-        modelList.add(new Model(R.drawable.deleteaccount, blank.class,"Delete Account"));
+        modelList.add(new Model(R.drawable.deleteaccount, DeleteAccountActivity.class,"Delete Account"));
         modelList.add(new Model(R.drawable.announcement,add_announcement.class,"Announcements"));
         modelList.add(new Model(R.drawable.subjectwork1, SubjectWorkActivity.class,"Class Work"));
         modelList.add(new Model(R.drawable.a_attend, AttendanceActivity.class,"Attendance"));
