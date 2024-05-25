@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EDEDED"
+    tools:context=".student_home_page">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/home_button"
+            android:layout_width="53dp"
+            android:layout_height="0dp"
+            android:backgroundTint="@color/white"
+            android:text=""
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/logout_button"
+            android:layout_width="53dp"
+            android:layout_height="59dp"
+            android:layout_marginEnd="57dp"
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="@color/white"
+            android:text=""
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="42dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/logout_icon" />
+
+        <Button
+            android:id="@+id/notification_button"
+            android:layout_width="53dp"
+            android:layout_height="59dp"
+            android:layout_marginStart="57dp"
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="@color/white"
+            android:text=""
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="42dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/nitificationsicon" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="46dp"
+            android:layout_height="43dp"
+            android:layout_marginBottom="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/a_icon_home" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Example layout; customize as needed -->
+
+    <LinearLayout
+        android:layout_width="317dp"
+        android:layout_height="234dp"
+        android:layout_marginTop="236dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.384"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/etParentID"
+            android:layout_width="173dp"
+            android:layout_height="wrap_content"
+            android:hint="Parent ID"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="#404040"
+            android:layout_marginLeft="75dp"/>
+
+        <EditText
+            android:id="@+id/etDate"
+            android:layout_width="173dp"
+            android:layout_height="wrap_content"
+            android:hint="Date (YYYY-MM-DD)"
+            android:textColorHint="#404040"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:layout_marginLeft="75dp"/>
+
+        <EditText
+            android:id="@+id/etTime"
+            android:layout_width="173dp"
+            android:layout_height="wrap_content"
+            android:hint="Time (HH:MM)"
+            android:textColorHint="#404040"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:layout_marginLeft="75dp"/>
+
+        <Button
+            android:id="@+id/btnAddPermit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#000000"
+            android:text="Add Permit"
+            android:textColor="#FFFFFF" />
+
+
+    </LinearLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/back_button"
+            android:layout_width="37dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="16dp"
+            android:background="@null"
+            android:backgroundTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.454"
+            app:srcCompat="@drawable/arrow_back" />
+
+        <TextView
+            android:id="@+id/student_home_title"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="56dp"
+            android:text="Add Exit Permit"
+            android:textColor="#3E172673"
+            android:textSize="25dp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="60dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.434"
+            app:srcCompat="@drawable/backer" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

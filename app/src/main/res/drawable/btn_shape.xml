@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Define your app theme attributes here -->
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.Circular" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item> <!-- This makes the corners equal to 50% of the width/height, resulting in a circle -->
+    </style>
+</resources>
